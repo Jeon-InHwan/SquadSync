@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <Sidebar />
+  <div class="outerDetailContainer">
     <div class="defaultContainer">
       <img class="id-photo-detail" :src="imageUrl" alt="Placeholder Image" />
       <p class="full-name-detail">Olivia Roberts</p>
@@ -17,11 +16,9 @@
 </template>
 
 <script>
-import Sidebar from '../../components/SideBar.vue'
 import SkillChart from '../../components/SkillChart.vue'
 export default {
   components: {
-    Sidebar,
     SkillChart,
   },
   asyncData({ params }) {
@@ -42,13 +39,17 @@ export default {
 </script>
 
 <style>
+.outerDetailContainer {
+  grid-column: 2;
+  grid-row: 2;
+  padding-top: 5%;
+  margin: 0 auto;
+}
+
 .defaultContainer {
   background-color: #f0f0f0;
   padding: 20px;
   border-radius: 8px;
-  position: relative;
-  top: 90px;
-  left: 350px;
   width: 810px;
   height: 360px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -85,8 +86,5 @@ export default {
   margin-top: 50px;
   width: 810px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  position: relative;
-  top: 90px;
-  left: 350px;
 }
 </style>

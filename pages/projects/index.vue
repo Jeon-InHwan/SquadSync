@@ -1,87 +1,79 @@
 <template>
-  <div>
-    <Sidebar />
-    <div class="tableWrapper">
-      <div class="table-title">
-        <h3>Projects on process</h3>
-      </div>
-      <table class="table-fill">
-        <thead>
-          <tr>
-            <th class="-letextft">Project ID</th>
-            <th class="text-left">Project Name</th>
-            <th class="text-left">Project Manager</th>
-            <th class="text-left">Status</th>
-          </tr>
-        </thead>
-        <tbody class="table-hover">
-          <tr @click="handleClick($event)">
-            <td class="text-left">20240115</td>
-            <td class="text-left">Migration to Cloud for Mega-bank</td>
-            <td class="text-left">James Miller</td>
-            <td class="text-left">On progress</td>
-          </tr>
-          <tr @click="handleClick($event)">
-            <td class="text-left">20240228</td>
-            <td class="text-left">AI Chatbot Implementation Project</td>
-            <td class="text-left">Mark Jukerbug</td>
-            <td class="text-left">On progress</td>
-          </tr>
-          <tr @click="handleClick($event)">
-            <td class="text-left">20240312</td>
-            <td class="text-left">New transition system for postoffice</td>
-            <td class="text-left">Joe Biden</td>
-            <td class="text-left">Suspended</td>
-          </tr>
-          <tr @click="handleClick($event)">
-            <td class="text-left">20240401</td>
-            <td class="text-left">Website Redesign Project</td>
-            <td class="text-left">Emily Johnson</td>
-            <td class="text-left">On progress</td>
-          </tr>
-          <tr @click="handleClick($event)">
-            <td class="text-left">20240425</td>
-            <td class="text-left">Data Analytics Implementation</td>
-            <td class="text-left">Sarah Smith</td>
-            <td class="text-left">Suspended</td>
-          </tr>
-          <tr @click="handleClick($event)">
-            <td class="text-left">20240505</td>
-            <td class="text-left">Mobile App Development Project</td>
-            <td class="text-left">David Brown</td>
-            <td class="text-left">Suspended</td>
-          </tr>
-          <tr @click="handleClick($event)">
-            <td class="text-left">20240512</td>
-            <td class="text-left">AI Integration for Healthcare</td>
-            <td class="text-left">Lisa Taylor</td>
-            <td class="text-left">On progress</td>
-          </tr>
-          <tr @click="handleClick($event)">
-            <td class="text-left">20240523</td>
-            <td class="text-left">Mobile App Development Project</td>
-            <td class="text-left">David Brown</td>
-            <td class="text-left">Suspended</td>
-          </tr>
-          <tr @click="handleClick($event)">
-            <td class="text-left">20240611</td>
-            <td class="text-left">New transition system for Government</td>
-            <td class="text-left">Chris Lee</td>
-            <td class="text-left">On progress</td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="tableWrapper">
+    <div class="table-title">
+      <h3>Projects on process</h3>
     </div>
+    <table class="table-fill">
+      <thead>
+        <tr>
+          <th class="-letextft">Project ID</th>
+          <th class="text-left">Project Name</th>
+          <th class="text-left">Project Manager</th>
+          <th class="text-left">Status</th>
+        </tr>
+      </thead>
+      <tbody class="table-hover">
+        <tr @click="handleClick($event)">
+          <td class="text-left">20240115</td>
+          <td class="text-left">Migration to Cloud for Mega-bank</td>
+          <td class="text-left">James Miller</td>
+          <td class="text-left">On progress</td>
+        </tr>
+        <tr @click="handleClick($event)">
+          <td class="text-left">20240228</td>
+          <td class="text-left">AI Chatbot Implementation Project</td>
+          <td class="text-left">Mark Jukerbug</td>
+          <td class="text-left">On progress</td>
+        </tr>
+        <tr @click="handleClick($event)">
+          <td class="text-left">20240312</td>
+          <td class="text-left">New transition system for postoffice</td>
+          <td class="text-left">Joe Biden</td>
+          <td class="text-left">Suspended</td>
+        </tr>
+        <tr @click="handleClick($event)">
+          <td class="text-left">20240401</td>
+          <td class="text-left">Website Redesign Project</td>
+          <td class="text-left">Emily Johnson</td>
+          <td class="text-left">On progress</td>
+        </tr>
+        <tr @click="handleClick($event)">
+          <td class="text-left">20240425</td>
+          <td class="text-left">Data Analytics Implementation</td>
+          <td class="text-left">Sarah Smith</td>
+          <td class="text-left">Suspended</td>
+        </tr>
+        <tr @click="handleClick($event)">
+          <td class="text-left">20240505</td>
+          <td class="text-left">Mobile App Development Project</td>
+          <td class="text-left">David Brown</td>
+          <td class="text-left">Suspended</td>
+        </tr>
+        <tr @click="handleClick($event)">
+          <td class="text-left">20240512</td>
+          <td class="text-left">AI Integration for Healthcare</td>
+          <td class="text-left">Lisa Taylor</td>
+          <td class="text-left">On progress</td>
+        </tr>
+        <tr @click="handleClick($event)">
+          <td class="text-left">20240523</td>
+          <td class="text-left">Mobile App Development Project</td>
+          <td class="text-left">David Brown</td>
+          <td class="text-left">Suspended</td>
+        </tr>
+        <tr @click="handleClick($event)">
+          <td class="text-left">20240611</td>
+          <td class="text-left">New transition system for Government</td>
+          <td class="text-left">Chris Lee</td>
+          <td class="text-left">On progress</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
-import Sidebar from '../../components/SideBar.vue'
-
 export default {
-  components: {
-    Sidebar,
-  },
   methods: {
     handleClick(event) {
       const projectId =
@@ -111,10 +103,11 @@ export default {
 
 <style>
 .tableWrapper {
-  position: relative;
-  top: 90px;
-  left: 350px;
+  grid-column: 2;
+  grid-row: 2;
   width: 850px;
+  margin: 0 auto;
+  padding-top: 5%;
 }
 
 .table-title {

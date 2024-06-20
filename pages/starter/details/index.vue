@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <Sidebar />
+  <div class="skills-outer-wrapper">
     <div class="skills-container">
       <h2>{{ starterProject }}</h2>
       <h4>-&nbsp;Skills going to be needed</h4>
@@ -16,12 +15,7 @@
 </template>
 
 <script>
-import Sidebar from '../../../components/SideBar.vue'
-
 export default {
-  components: {
-    Sidebar,
-  },
   computed: {
     jsonData() {
       return this.$store.state.jsonData
@@ -34,6 +28,12 @@ export default {
 </script>
 
 <style>
+.skills-outer-wrapper {
+  grid-column: 2;
+  grid-row: 2;
+  padding-top: 5%;
+  margin: 0 auto;
+}
 .skills-container {
   margin: 0 auto;
   margin-top: 7%;

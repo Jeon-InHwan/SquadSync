@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <Sidebar />
+  <div class="outerOuterWrapper">
     <div class="grid-container">
       <div class="resources">
         <img
@@ -103,12 +102,7 @@
 </template>
 
 <script>
-import Sidebar from '../../components/SideBar.vue'
-
 export default {
-  components: {
-    Sidebar,
-  },
   methods: {
     forSkillDetails(event) {
       const fullName = event.target.parentElement.children[1].innerText
@@ -122,20 +116,24 @@ export default {
 </script>
 
 <style>
+.outerOuterWrapper {
+  grid-column: 2;
+  grid-row: 2;
+  padding-top: 5%;
+  margin: 0 auto;
+}
 .grid-container {
   background-color: #cdd9c8;
   border-radius: 10px;
-  position: relative;
-  top: 90px;
-  left: 350px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 70px 80px;
-  gap: 45px;
+  padding: 60px 60px;
+  gap: 35px;
   width: 800px;
   height: 1450px;
-  justify-content: center !important;
+  justify-content: center;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  margin-bottom: 50px;
 }
 
 .resources {

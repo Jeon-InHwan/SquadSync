@@ -1,30 +1,26 @@
 <template>
-  <div>
-    <div class="container">
-      <Sidebar />
-      <div class="project_summary_container">
-        <p id="project_name_p">{{ $route.query.projectName }}</p>
-        <pre>
+  <div class="outerWrapper">
+    <div class="project_summary_container">
+      <p id="project_name_p">{{ $route.query.projectName }}</p>
+      <pre>
 PROJECT ID            :    {{ $route.params.projectId }}
 PROJECT Manager :    {{ $route.query.projectManager }}
 </pre
-        >
-        <div id="forStatusChange" class="status_div">
-          <p>{{ $route.query.status }}</p>
-        </div>
+      >
+      <div id="forStatusChange" class="status_div">
+        <p>{{ $route.query.status }}</p>
       </div>
     </div>
+
     <GraphChart />
   </div>
 </template>
 
 <script>
-import Sidebar from '../../components/SideBar.vue'
 import GraphChart from '../../components/GraphChart.vue'
 
 export default {
   components: {
-    Sidebar,
     GraphChart,
   },
   asyncData({ params, query }) {
@@ -47,14 +43,19 @@ export default {
 </script>
 
 <style>
+.outerWrapper {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0 auto;
+  padding-top: 5%;
+}
+
 .project_summary_container {
   background-color: aliceblue;
   border-radius: 15px;
   padding: 30px;
   width: 400px;
   height: 90px;
-  margin-top: 90px;
-  margin-left: 400px;
   vertical-align: middle;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
@@ -88,17 +89,5 @@ export default {
 
 .status_div p {
   padding-top: 2px;
-}
-
-.graphContainer {
-  background-color: aliceblue;
-  border-radius: 15px;
-  padding: 30px;
-  width: 400px;
-  height: 190px;
-  margin-top: 200px;
-  margin-left: 400px;
-  vertical-align: middle;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <div id="test">
+    <div class="apexchartWrapper">
       <ApexCharts
         width="850"
         type="line"
@@ -74,8 +74,7 @@ export default {
 </script>
 
 <style>
-#test {
-  margin-top: 80px;
-  margin-left: 380px;
+.apexchartWrapper {
+  margin-top: 40px;
 }
 </style>

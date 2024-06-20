@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <Sidebar />
+  <div class="outerStarterWrapper">
     <div class="starter-container">
       <h2>Start a new project</h2>
       <input
@@ -30,13 +29,9 @@
 
 
 <script>
-import Sidebar from '../../components/SideBar.vue'
 
 
 export default {
-  components: {
-    Sidebar,
-  },
   data() {
     return {
       summary: '',
@@ -47,7 +42,7 @@ export default {
   methods: {
     async goNext() {
       if(document.getElementById("projectStarterInput").value.length === 0) {
-        return 
+        return
       }
       this.loading = true
       this.data = null
@@ -80,7 +75,16 @@ export default {
 </script>
 
 <style>
+
+.outerStarterWrapper {
+  grid-column: 2;
+  grid-row: 2;
+  padding-top: 5%;
+  margin: 0 auto;
+}
 .starter-container {
+  grid-column: 2; /* navigation bar가 전체 너비를 차지하도록 설정 */
+  grid-row: 2; /* 첫 번째 row에 위치 */
   margin: 0 auto;
   margin-top: 7%;
   background-color: #fff;
@@ -127,7 +131,7 @@ export default {
 
 .model-response-container {
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 30px;
   background-color: #fff;
   border-radius: 8px;
   padding: 40px 40px 40px 40px;
@@ -142,7 +146,7 @@ export default {
 
 .loader {
   margin: 0 auto;
-  margin-top: 120px;
+  margin-top: 100px;
   border: 12px solid rgba(255, 255, 255, 0.3);
   border-top: 12px solid #2d6da9;
   border-radius: 50%;

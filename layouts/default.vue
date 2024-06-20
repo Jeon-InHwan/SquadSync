@@ -11,12 +11,26 @@
         <li class="login_btn"><NuxtLink to="/main">SIGN IN</NuxtLink></li>
       </ul>
     </nav>
+
+    <template v-if="shouldDisplaySidebar">
+      <Sidebar />
+    </template>
     <nuxt />
   </div>
 </template>
 
 <script>
-export default {}
+import Sidebar from '../components/SideBar.vue'
+export default {
+  components: {
+    Sidebar,
+  },
+  computed: {
+    shouldDisplaySidebar() {
+      return this.$route.path !== '/'
+    },
+  },
+}
 </script>
 
 <style>
@@ -150,7 +164,6 @@ body {
   padding-bottom: 100px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #f7f6f3;
   color: #3c3c3c;
   font-size: 18px;
 }
@@ -176,7 +189,16 @@ body::before {
   background-position: center;
 }
 
-nav {
+.background {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  grid-template-rows: 75px 1fr;
+  height: 100vh;
+}
+
+.nav {
+  grid-column: 1 / 3;
+  grid-row: 1;
   background-color: #272727;
   display: flex;
   justify-content: space-between;

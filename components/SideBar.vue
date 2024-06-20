@@ -17,9 +17,8 @@ export default {
 
 <style>
 .sidebar {
-  position: absolute;
-  top: 75px;
-  left: 0px;
+  grid-column: 1;
+  grid-row: 2 / 3;
   width: 250px;
   padding: 20px;
   height: 180vh;
