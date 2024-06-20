@@ -4,10 +4,10 @@
     <div class="starter-container">
       <h2>Start a new project</h2>
       <input
+        id="projectStarterInput"
         v-model="summary"
         type="text"
-        placeholder="Plase input the project's summary for AI auto completion..."
-        required
+        placeholder="Plase input the project's summary for AI auto completion..."  
       />
       <button @click="goNext">Start with AI auto completion</button>
     </div>
@@ -22,14 +22,16 @@
           <li>{{ data.techs.tech5 }}</li>
         </ul>
       </p>
-      <NuxtLink v-if="data" to="/" class="nextPageBtn">Next step</NuxtLink>
+      <NuxtLink v-if="data" class="nextPageBtn" to="/starter/details">Next step</NuxtLink>
     </div>
    
   </div>
 </template>
 
+
 <script>
 import Sidebar from '../../components/SideBar.vue'
+
 
 export default {
   components: {
@@ -44,6 +46,9 @@ export default {
   },
   methods: {
     async goNext() {
+      if(document.getElementById("projectStarterInput").value.length === 0) {
+        return 
+      }
       this.loading = true
       this.data = null
       await this.$axios
@@ -60,16 +65,17 @@ export default {
             resultString = res.substring(0, lastIndex + 1)
           }
           this.data = JSON.parse(resultString)
+          // Vuex mutation
+          this.$store.commit('setJsonData', JSON.parse(resultString));
         })
         .catch((error) => {
           console.log(error)
         })
-      this.loading = false
+        const projectStarter = document.getElementById("projectStarterInput").value;
+        this.$store.commit('setStarterProject', projectStarter);
+        this.loading = false
     },
   },
-  nextPage(){
-
-  }
 }
 </script>
 
